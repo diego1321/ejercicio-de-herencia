@@ -37,13 +37,13 @@ class Persona{
 }
 
 
-class empleado extends Persona{
+class Empleado extends Persona{
     static contadorEmpleados = 0;
     
     constructor(nombre, apellido, edad, sueldo){
         super(nombre, apellido, edad)
         this._sueldo = sueldo;
-        this._idEmpleado = ++empleado.contadorEmpleados;
+        this._idEmpleado = ++Empleado.contadorEmpleados;
     }
 get idEmpleado(){
     return this._idEmpleado;
@@ -60,13 +60,13 @@ datosCompletos(){
 }
 
 
-class cliente extends Persona{
+class Cliente extends Persona{
     static contadorClientes = 0;
     
-    constructor(nombre, apellido, edad, ){
+    constructor(nombre, apellido, edad, fechaRegistro ){
     super(nombre, apellido, edad)
-    this._fechaRegistro;
-    this._idCliente == ++cliente.contadorClientes;
+    this._fechaRegistro = fechaRegistro;
+    this._idCliente == ++Cliente.contadorClientes;
     this._fechaRegistro = new Date();
 }
 get idCliente(){
@@ -76,10 +76,10 @@ get fechaRegistro(){
     return this._fechaRegistro;
 }
 set fechaRegistro(fechaRegistro){
-    this._fechaRegistro;
+    this._fechaRegistro = fechaRegistro;
 }
 datosCompletos(){
-    return this.datosCompletos()+ ', ' + this._fechaRegistro
+    return this.datosCompletos()+ ', ' + this._idCliente + ', ' + this._fechaRegistro
 }
 }
 
@@ -87,8 +87,8 @@ let persona1 = new Persona('pepe', 'sanchez', 19);
 console.log(persona1);
 
 
-let empleado1 = new empleado('carlos', 'suarez', 22, 5000);
+let empleado1 = new Empleado('carlos', 'suarez', 22, 5000);
 console.log(empleado1);
 
-let cliente1 = new cliente('jose', 'perez', 32 );
-console.log(cliente1);
+let Cliente1 = new Cliente('jose', 'perez', 32 );
+console.log(Cliente1);
